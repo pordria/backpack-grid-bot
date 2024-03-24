@@ -1,0 +1,29 @@
+{
+  "name": "backpack-grid-bot",
+  "version": "1.0.0",
+  "main": "app.ts",
+  "description": "A Grid Trading Bot For Backpack Exchange.",
+  "repository": "git@github.com:pordria/backpack-grid-bot.git",
+  "license": "MIT",
+  "author": "pordria <pordria@outlook.com>",
+  "scripts": {
+    "start": "tsc && pm2 start dist/app.js --name grid-trading-bot --log gridbot.log",
+    "dev": "tsc -w",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "axios": "^1.6.7",
+    "buffer": "^6.0.3",
+    "dotenv": "^16.4.5",
+    "pino": "^8.19.0",
+    "pino-pretty": "^10.3.1",
+    "prettytable": "^0.3.1",
+    "qs": "^6.12.0",
+    "ws": "^8.16.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.25",
+    "@types/qs": "^6.9.12",
+    "@types/ws": "^8.5.10"
+  }
+}
