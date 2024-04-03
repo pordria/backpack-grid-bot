@@ -16,10 +16,11 @@ In order to run the script you need to:
     * `SYMBOL` your trading pair, like `SOL_USDC`, make sure you have enough SOL and enough USDC.
     * `LOWER_PRICE` the bottom price of grid, like `170`
     * `UPPER_PRICE` the top price of grid, like `200`
+    * `PRICE_DECIMAL` the price decimal, if the calculated price is 170.33333333, if PRICE_DECIMAL is 2, price will be 170.33. if it's 1, price will be 170.3.
     * `NUMBER_OF_GRIDS` the number of grids, like `100`
     * `QUANTITY_PER_GRID`= the quantity of each grid like `0.07`
-    * `TELEGRAM_BOT_API_TOKEN` telegram bot token
-    * `TELEGRAM_TARGET_CHAT_ID` chat id
+    * `TELEGRAM_BOT_API_TOKEN` telegram bot token (*Optional*)
+    * `TELEGRAM_TARGET_CHAT_ID` chat id (*Optional*)
 
 
 Something need to do.

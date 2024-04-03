@@ -12,6 +12,7 @@ const TG_NOTIFY_INTERVAL = 3600000;
 const SYMBOL = retrieveEnv('SYMBOL');
 const LOWER_PRICE = parseFloat(retrieveEnv('LOWER_PRICE'));
 const UPPER_PRICE = parseFloat(retrieveEnv('UPPER_PRICE'));
+const PRICE_DECIMAL = parseFloat(retrieveEnv('PRICE_DECIMAL'));
 const NUMBER_OF_GRIDS = parseInt(retrieveEnv('NUMBER_OF_GRIDS'));
 const QUANTITY_PER_GRID = parseFloat(retrieveEnv('QUANTITY_PER_GRID'));
 
@@ -59,13 +60,13 @@ const run = async () => {
         const _ = await connection.apiCall("orderExecute", {
             clientId: clientId,
             orderType: "Limit",
-            price: price.toFixed(2),
-            quantity: QUANTITY_PER_GRID.toFixed(2),
+            price: price.toFixed(PRICE_DECIMAL),
+            quantity: QUANTITY_PER_GRID,
             side: side,
             symbol: SYMBOL,
             timeInForce: "GTC"
         });
-        logger.info(`[${SYMBOL}] ${side} ${QUANTITY_PER_GRID}_${price.toFixed(2)}.`);
+        logger.info(`[${SYMBOL}] ${side} ${QUANTITY_PER_GRID}_${price.toFixed(PRICE_DECIMAL)}.`);
     };
     orders.forEach(async (price, index) => await orderExecute(index, price, price < lastPrice ? 'Bid' : 'Ask'));
 
