@@ -19,7 +19,7 @@
     "pino-pretty": "^10.3.1",
     "prettytable": "^0.3.1",
     "qs": "^6.12.0",
-    "ws": "^8.16.0"
+    "ws": "^8.17.1"
   },
   "devDependencies": {
     "@types/node": "^20.11.25",
